@@ -46,6 +46,15 @@ public class User {
 	private String password;
 	private boolean deleted;
 	
+	@OneToMany(mappedBy="user")
+	private List<Blog> list;
+	
+	public List<Blog> getList() {
+		return list;
+	}
+	public void setList(List<Blog> list) {
+		this.list = list;
+	}
 	public boolean isDeleted() {
 		return deleted;
 	}

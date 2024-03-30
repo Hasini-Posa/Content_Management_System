@@ -8,6 +8,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,8 +24,27 @@ public class Blog {
 	private String[] topics;
 	private String about;
 	
-	@ManyToMany
-	private List<User> list= new ArrayList<User>();
+	@ManyToOne
+	private User user;
+	
+	@OneToOne
+	private ContributionPanel contributionPanel;
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public ContributionPanel getContributionPanel() {
+		return contributionPanel;
+	}
+
+	public void setContributionPanel(ContributionPanel contributionPanel) {
+		this.contributionPanel = contributionPanel;
+	}
 
 	public int getBlogId() {
 		return blogId;
@@ -56,13 +78,6 @@ public class Blog {
 		this.about = about;
 	}
 
-	public List<User> getList() {
-		return list;
-	}
-
-	public void setList(List<User> list) {
-		this.list = list;
-	}
 	
 	
 }

@@ -15,7 +15,7 @@ public class USerApi {
 	
 	Contact contact()
 	{
-		return new Contact().email("abc@gmail").name("Developer SubbuAkka").url("subuakka.com");
+		return new Contact().email("abc@gmail").name("Developer Subhashini").url("subashini.com");
 	}
 	
 	OpenAPI openApi()
